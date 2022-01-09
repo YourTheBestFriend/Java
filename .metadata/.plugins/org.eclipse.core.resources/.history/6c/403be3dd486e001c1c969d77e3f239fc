@@ -1,0 +1,18 @@
+package task4;
+
+import static java.lang.System.out;
+
+import java.util.Formatter;
+
+public class Main 
+{
+	public static void main(String[] args) 
+	{
+		out.println(formatString("Иванов",10,"Предмет"));
+	}
+
+	public static String formatString(String name, int mark, String subject)
+	{
+	 	return new Formatter().format("Студент %15s получил %3d по %10s", name,mark,subject).toString();
+	}
+}

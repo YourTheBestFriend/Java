@@ -1,0 +1,13 @@
+package core;
+
+import static java.lang.System.out;
+
+public class Report
+{
+	public static void generateReport(Employee_for_6_task[] employees)
+	{
+		for (Employee_for_6_task employee : employees)
+			out.printf("Зарплата: %8.2f\n", employee.getSalary());
+	}
+}
+

@@ -1,0 +1,35 @@
+package task8;
+
+public class Main
+{
+	public static void main(String[] args) 
+	{
+		String string = "abababababab aaaa abc fgsgsgsdf f 123456789 jkjk";
+		System.out.println(findMinWord(string));
+	}
+	
+	public static String findMinWord(String x)
+	{
+		String[] words = x.split(" ");
+		
+		long wordIndex = countUniqueCharacters(words[0]);
+		
+		String word=words[(int)wordIndex];
+		
+		for(int i = 1; i < words.length; i++)
+		{
+			if (countUniqueCharacters(words[i])<countUniqueCharacters(words[(int)wordIndex]))
+			{
+				wordIndex=i;
+				word = words[(int)wordIndex];
+			}
+		}
+		return words[(int) wordIndex];
+	
+	}
+	
+	public static long countUniqueCharacters(String input) 
+	{
+	    return input.chars().distinct().count();
+	}
+}

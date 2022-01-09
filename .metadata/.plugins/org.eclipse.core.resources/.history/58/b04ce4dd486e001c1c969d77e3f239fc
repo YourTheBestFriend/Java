@@ -1,0 +1,21 @@
+package task5;
+
+
+import java.util.Formatter;
+
+class Product 
+{
+	private String name;
+	private int price;
+	
+	public Product(String name, int price)
+	{
+		this.name=name;
+		this.price=price;
+	}
+	
+	public String toString() 
+	{
+		return new Formatter().format("Название продукта: %20s.\nЦена: %5d.",this.name,this.price).toString();
+	}
+}

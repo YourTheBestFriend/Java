@@ -1,0 +1,19 @@
+package task2;
+
+import static java.lang.System.out;
+
+public class Main
+{
+	public static void main(String[] args) 
+	{
+		replace();
+	}
+	
+	public static void replace()
+	{
+		String str = "Object-oriented programming is a programming language model organized"
+				+ " around objects rather than \"actions\" and data rather than logic."
+				+ " Object-oriented programming blabla. Object-oriented programming bla.\n";
+		out.println(str.replaceFirst(" Object-oriented programming"," OOP"));
+	}
+}

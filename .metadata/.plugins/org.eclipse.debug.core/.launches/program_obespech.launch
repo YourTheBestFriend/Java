@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
+    <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+        <listEntry value="/laba_2/src/com/program/obespech/program_obespech.java"/>
+    </listAttribute>
+    <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+        <listEntry value="1"/>
+    </listAttribute>
+    <booleanAttribute key="org.eclipse.jdt.launching.ATTR_EXCLUDE_TEST_CODE" value="true"/>
+    <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="com.program.obespech.program_obespech"/>
+    <stringAttribute key="org.eclipse.jdt.launching.MODULE_NAME" value="module_laba_2"/>
+    <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="laba_2"/>
+</launchConfiguration>

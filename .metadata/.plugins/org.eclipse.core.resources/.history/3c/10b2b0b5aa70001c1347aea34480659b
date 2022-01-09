@@ -1,0 +1,74 @@
+package core;
+
+public class Employee {
+	protected String FIO;
+	protected int Dolzhnost = 0; // Например должность от 1 - 5, это будет влиять на оклад
+	protected double Oklad;
+	public Employee(){}
+	public Employee(String FIO, int Dolzhnost, double Oklad)
+	{
+		this.FIO = FIO;
+		this.Dolzhnost = Dolzhnost;
+		try
+		{
+			if (Oklad < 0)
+			{
+				throw new OkladException("Exception");
+			}
+			else
+			{
+				this.Oklad = Oklad;	
+			}
+				
+		}
+		catch(OkladException ex)
+		{
+			System.out.println("«Невозможно создать сотрудника – указан отрицательный оклад: " + Oklad + " " + ex.getMessage());
+			ex.printStackTrace();
+		}
+		
+	}
+	public String getFIO() {
+		return FIO;
+	}
+	public void setFIO(String fIO) {
+		FIO = fIO;
+	}
+	public int getDolzhnost() {
+		return Dolzhnost;
+	}
+	public void setDolzhnost(int dolzhnost) {
+		Dolzhnost = dolzhnost;
+	}
+	public double getOklad() {
+		return Oklad;
+	}
+	public void setOklad(double oklad) {
+		Oklad = oklad;
+	}
+	
+	public double return_zarplatu()
+	{
+		System.out.println("Оклад составляет - " + getOklad());
+		int doklad =  getDolzhnost();
+		System.out.println("Должность - " + doklad + " зарплата увеличивается на " + (10* doklad) + "%");
+		System.out.println("Должность - " + doklad + " зарплата увеличивается на " + (10 * doklad) + "%");
+		double okl = 0;
+		try
+		{
+			// Вызовется исключение т.к Dolzhnost = 0 например надо указать другое
+			// this.setDolzhnost(5); // раскоментить чтобы не было исключения
+			 okl = Oklad + (Oklad * (doklad * 10) / 100); // + процентная ставка от должности
+		}
+		catch(ArithmeticException ex)
+		{
+			System.out.println("Exception " + ex.getMessage());
+		}
+		catch(Exception ex2)
+		{
+			System.out.println("Exception " + ex2.getMessage());
+			 System.exit(1);
+		}
+		return okl;
+	}
+}

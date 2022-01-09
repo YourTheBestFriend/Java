@@ -1,0 +1,10 @@
+package Classes;
+
+public class Dog extends Pet{
+
+	public Dog(String name) {
+		super(name);
+		// TODO Auto-generated constructor stub
+	}
+
+}

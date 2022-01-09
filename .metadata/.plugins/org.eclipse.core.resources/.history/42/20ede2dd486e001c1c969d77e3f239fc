@@ -1,0 +1,31 @@
+package task3;
+
+import static java.lang.System.out;
+
+
+public class Main 
+{
+
+	public static void main(String[] args) 
+	{
+		String s1 ="te";
+		String s2 ="test";
+		String s3 ="testst";
+		String s4 ="teststri";
+		String s5 ="teststring";
+		String s6 ="teststringte";
+		String s7 ="teststringtest";
+		out.println(twoAverageLetters(s1));
+		out.println(twoAverageLetters(s2));
+		out.println(twoAverageLetters(s3));
+		out.println(twoAverageLetters(s4));
+		out.println(twoAverageLetters(s5));
+		out.println(twoAverageLetters(s6));
+	}
+	
+	public static String twoAverageLetters(String s)
+	{
+		return new StringBuilder().append(s.charAt(s.length()/2-1)).append(s.charAt(s.length()/2)).toString();
+	}
+
+}

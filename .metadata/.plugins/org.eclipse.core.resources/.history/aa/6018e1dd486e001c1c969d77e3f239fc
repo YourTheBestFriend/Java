@@ -1,0 +1,12 @@
+package application;
+
+public class People {
+	private String name;
+	public People(String n) {
+		this.name=n;
+	}
+	@Override
+	public String toString() {
+		return getClass().getSimpleName()+"[name="+name+"]";
+	}
+}

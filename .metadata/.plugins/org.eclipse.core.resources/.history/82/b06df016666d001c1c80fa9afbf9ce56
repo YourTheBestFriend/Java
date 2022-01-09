@@ -1,0 +1,7 @@
+package core;
+
+public class Person_for_5_task {
+	public String name = "Matvey";
+	public String surname = "Goncharov";
+	
+}

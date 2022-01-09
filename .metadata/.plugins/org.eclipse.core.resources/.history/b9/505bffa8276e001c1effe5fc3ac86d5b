@@ -1,0 +1,12 @@
+package core;
+
+public class Person_for_5_task {
+	// Сразу заполнил чтобы тупо показать что работает
+	public String name = "default_name";
+	public String surname = "default_surname"; 
+	
+	public String toString() { 
+		return String.format("Name %s получил %3d по %10s", name, mark, predmet);
+	    return "Name: " + this.name + " Surname: " + this.surname;
+	} 
+}

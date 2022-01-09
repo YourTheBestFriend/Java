@@ -1,0 +1,313 @@
+package core;
+
+import java.io.*;
+import java.util.Random;
+
+public class class_laba_8 {
+	public static void main(String[] args) 
+	{
+		System.out.println("laba 8");
+		
+		// Task 1
+		System.out.println("Task 1");
+		String text = "name: Goncharov Matvey Nickolaevich\nyearsOld: 17\nsex: M\n"; // Например данные для записи, информация о себе
+		try(FileWriter writer = new FileWriter("C:\\Users\\Xhref\\eclipse-workspace\\laba_8\\src\\core\\task1.txt"))
+	    {	 
+			writer.write(text);
+	        writer.flush();
+	        System.out.println("Данные записаны в файл\n");
+	        writer.close();
+	    }
+	    catch(IOException ex)
+		{       
+	           System.out.println(ex.getMessage());
+	    } 
+		// вывод из файла
+		try(FileReader reader = new FileReader("C:\\Users\\Xhref\\eclipse-workspace\\laba_8\\src\\core\\task1.txt"))
+        {
+           // читаем посимвольно
+            int c;
+            while((c=reader.read())!=-1){
+                 
+                System.out.print((char)c);
+            } 
+            System.out.println("Вы успешно прочитали данные из файла\n");
+            reader.close();
+        }
+        catch(IOException ex)
+		{
+            System.out.println(ex.getMessage());
+        } 
+		File fileobj = new File("C:\\Users\\Xhref\\eclipse-workspace\\laba_8\\src\\core\\task1.txt");
+		System.out.println("Вывод информации о файле:");
+		System.out.println("Name of file:" + fileobj.getName());
+		System.out.println("Size of file:" + fileobj.length() + " Bytes");
+		System.out.println("Last modified:" + fileobj. lastModified());
+		System.out.println("Parent:" + fileobj.getParent());
+		System.out.println("Path:" + fileobj.getPath());
+		System.out.println("Abs Path:" + fileobj.getAbsolutePath());
+		System.out.println("File " + (fileobj.exists() ? "exists" : " not exist"));
+		System.out.println(fileobj.canRead() ? "can read" : "can’t read");
+		System.out.println(fileobj.canWrite() ? "can write" : "can’t write");
+		System.out.println("This is " + (fileobj.isDirectory() ? " " : "not") + " directory");
+		System.out.println("This is "+ (fileobj.isAbsolute() ? "absolute" : " not absolute") +
+		(fileobj.isFile() ? " normal file" : " a named pipe"));
+		
+		// task 2
+		System.out.println("\nTask 2");
+		int[] arr_10 = new int[10];
+		int sredn_in_arr = 0;
+		try(FileReader reader2 = new FileReader("C:\\Users\\Xhref\\eclipse-workspace\\laba_8\\src\\core\\f.txt"))
+        {
+			int i = 0;
+			while (true)
+			{
+				// как вариант работы с числами
+				char c = (char) reader2.read();
+				int num =  c - '0';
+				if (num != -16) // -16 это пробел
+				{
+					arr_10[i] = num;
+					sredn_in_arr += arr_10[i];
+					System.out.print(arr_10[i] + " ");
+					i++;
+				}
+				if (i == arr_10.length)
+				{
+					break;
+				}
+			}
+			sredn_in_arr /= arr_10.length;
+			System.out.print("\nСреднее из чисел: " + sredn_in_arr);
+			reader2.close();
+        }
+        catch(IOException ex)
+		{
+            System.out.println(ex.getMessage());
+        } 
+		
+		// task 3
+		System.out.println("\n\nTask 3"); // import java.util.Random;
+		Random rand = new Random();
+		int int_random = rand.nextInt(10); 
+		int colvo_randomn = 20;
+		try(FileWriter writer = new FileWriter("C:\\Users\\Xhref\\eclipse-workspace\\laba_8\\src\\core\\f_4.txt", false))
+	    {	 
+			for (int i = 0; i < colvo_randomn;i++)
+			{
+				int_random = rand.nextInt(100); 
+				System.out.print(int_random + " ");
+				writer.write(Integer.toString(int_random) + " "); // Допустим позаписывал как строку
+			}
+	        writer.flush();
+	        System.out.println("\nДанные записаны в файл\n");
+	        writer.close();
+	    }
+	    catch(IOException ex)
+		{       
+	           System.out.println(ex.getMessage());
+	    }
+		
+		// Теперь тупо считываю и записываю в нужный файл, .... Записать в файл g все четные числа файла из f, а в файл h – все нечетные.
+		String[] arr_string;
+		try(FileReader reader2 = new FileReader("C:\\Users\\Xhref\\eclipse-workspace\\laba_8\\src\\core\\f_4.txt"))
+        {
+			 BufferedReader reader = new BufferedReader(reader2);
+	         String line;
+	         while (true) 
+	         {
+	        	 // System.out.println(line);// Для проверки
+	             // считываем остальные строки в цикле
+	             line = reader.readLine(); // тут в каждой строке числа их разбиваю на массив и записываю в файлы g и h
+	             if (line == null) // Чтобы при разбивке не попал нулл в строку
+	             {
+	            	 break;
+	             }
+	             // Разбил на строки по пробелам, теперь можно пройтись по ним  
+	             arr_string = line.split(" ");
+	            
+	             
+	             // В этот файл записываю четные
+	             try(FileWriter writer_g = new FileWriter("C:\\Users\\Xhref\\eclipse-workspace\\laba_8\\src\\core\\g__.txt"))
+	             {
+	            	 for (int i = 0; i < arr_string.length; i++)
+		             {
+		            	 if (Integer.parseInt(arr_string[i]) % 2 == 0)
+		            	 {
+		            		 // System.out.println("_______" + Integer.parseInt(arr_string[i])); // Для проверки
+		            		 writer_g.write(arr_string[i] + " "); // Записываю через пробел
+		            	 }
+		             }
+	            	 writer_g.close();
+	             }
+	             catch(IOException ex)
+	     		 {       
+	            	 System.out.println(ex.getMessage());
+	     	     }
+	             
+	             // В этот файл записываю не четные
+	             try(FileWriter writer_h = new FileWriter("C:\\Users\\Xhref\\eclipse-workspace\\laba_8\\src\\core\\h__.txt"))
+	             {
+	            	 for (int i = 0; i < arr_string.length; i++)
+		             {
+	            		 if (Integer.parseInt(arr_string[i]) % 2 != 0)
+		            	 {
+	            			// System.out.println("_______" + Integer.parseInt(arr_string[i])); // Для проверки
+		            		 writer_h.write(arr_string[i] + " "); // Записываю через пробел
+		            	 }
+		             }
+	            	 writer_h.close();
+	             }
+	             catch(IOException ex)
+	     		 {       
+	            	 System.out.println(ex.getMessage());
+	     	     }
+	         }
+
+            System.out.println("Вы успешно прочитали данные из файла\n");
+            reader2.close();
+        }
+        catch(IOException ex)
+		{
+            System.out.println(ex.getMessage());
+        } 
+		
+		// task 4
+		System.out.println("\nTask 4"); 
+		String[] arr_string_2;
+		double sredn_temp = 0;
+		try(FileReader reader4 = new FileReader("C:\\Users\\Xhref\\eclipse-workspace\\laba_8\\src\\core\\temp.dat"))
+        {
+			 BufferedReader reader_2 = new BufferedReader(reader4);
+	         String line;
+	         while (true) 
+	         {
+	        	 // System.out.println(line);// Для проверки
+	             // считываем остальные строки в цикле
+	             line = reader_2.readLine(); // тут в каждой строке числа их разбиваю на массив и записываю в файлы g и h
+	             if (line == null) // Чтобы при разбивке не попал нулл в строку
+	             {
+	            	 break;
+	             }
+	             // Разбил на строки по пробелам, теперь можно пройтись по ним  
+	             arr_string_2 = line.split(" ");
+	             for (int i = 0; i < arr_string_2.length; i++)
+	             {
+	            	 sredn_temp += Double.parseDouble(arr_string_2[i]);
+	             }
+	             sredn_temp /= arr_string_2.length;
+	             System.out.println("Средняя температура по палате = " + sredn_temp);
+	             sredn_temp = 0; // Занулил т.к чтобы данные не попали в след строку
+	         }
+        }
+		catch(IOException ex)
+		{
+            System.out.println(ex.getMessage());
+        } 
+		
+		// task 5
+		// с сохранением порядка следования - тупо друг за другом и это не имеется ввиду числа сортануть и записать и т.д
+		System.out.println("\n\nTask 5"); 
+		// Для быстроты действия сразу с клавы ввел значения в файл 
+		try(FileWriter writer2 = new FileWriter("C:\\Users\\Xhref\\eclipse-workspace\\laba_8\\src\\core\\h_task5.txt"))
+        {
+			try(FileReader reader2 = new FileReader("C:\\Users\\Xhref\\eclipse-workspace\\laba_8\\src\\core\\f_task5.txt"))
+	        {
+				BufferedReader reader = new BufferedReader(reader2);
+		         String line;
+		         int line_polozh_elem = 0, index_line_polozh_elem = 0;
+		         while (true) 
+		         {
+		             line = reader.readLine();
+		             if (line == null) // Чтобы при разбивке не попал нулл в строку
+		             {
+		            	 break;
+		             }
+		             writer2.write(line); 
+		         }
+				reader2.close();
+	        }
+	        catch(IOException ex)
+			{
+	            System.out.println(ex.getMessage());
+	        } 
+			writer2.write(" "); 
+			try(FileReader reader2 = new FileReader("C:\\Users\\Xhref\\eclipse-workspace\\laba_8\\src\\core\\g_task5.txt"))
+	        {
+				BufferedReader reader = new BufferedReader(reader2);
+		         String line;
+		         int line_polozh_elem = 0, index_line_polozh_elem = 0;
+		         while (true) 
+		         {
+		             line = reader.readLine();
+		             if (line == null) // Чтобы при разбивке не попал нулл в строку
+		             {
+		            	 break;
+		             }
+		             writer2.write(line); 
+		         }
+				reader2.close();
+	        }
+	        catch(IOException ex)
+			{
+	            System.out.println(ex.getMessage());
+	        } 
+			writer2.close();
+        }
+        catch(IOException ex)
+		{
+            System.out.println(ex.getMessage());
+        } 
+		System.out.println("Смотрии файл - h_task5.txt");
+		
+		// task 6
+		System.out.println("\n\nTask 6"); 
+		// Записал 10 чисел в файл f_task6.txt
+		// запихнул их сразу в строку 
+		String str_pol_otr = "1 2 -3 4 5 -6 -7 8 9 10";
+		try(FileWriter writer2 = new FileWriter("C:\\Users\\Xhref\\eclipse-workspace\\laba_8\\src\\core\\f_task6.txt"))
+        {
+			writer2.write(str_pol_otr);
+			writer2.close();
+        }
+        catch(IOException ex)
+		{
+            System.out.println(ex.getMessage());
+        } 
+		
+		int[] arr_10_for_find_polozh_znach = new int[10];
+		
+		try(FileReader reader2 = new FileReader("C:\\Users\\Xhref\\eclipse-workspace\\laba_8\\src\\core\\f_task6.txt"))
+        {
+			BufferedReader reader = new BufferedReader(reader2);
+	         String line;
+	         int line_polozh_elem = 0, index_line_polozh_elem = 0;
+	         while (true) 
+	         {
+	        	 // System.out.println(line);// Для проверки
+	             // считываем остальные строки в цикле
+	             line = reader.readLine();
+	             if (line == null) // Чтобы при разбивке не попал нулл в строку
+	             {
+	            	 break;
+	             }
+	             // Разбил на строки по пробелам, теперь можно пройтись по ним  
+	             arr_string = line.split(" ");
+	             for (int i = 0; i < arr_string.length; i++)
+	             {
+            		 if (Integer.parseInt(arr_string[i]) > 0)
+	            	 {
+            			 line_polozh_elem++;
+	            	 }
+	             }
+	             System.out.println("В строке по индексу " + index_line_polozh_elem + " Кол-во положительных элементов = " + line_polozh_elem);
+	             line_polozh_elem = 0; // Обнуляю т.к в след строке свое кол-во положительных элементов
+	         }
+			reader2.close();
+        }
+        catch(IOException ex)
+		{
+            System.out.println(ex.getMessage());
+        }
+	}
+}

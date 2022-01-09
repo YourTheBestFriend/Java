@@ -1,0 +1,20 @@
+package core;
+
+public class Person_for_5_task {
+	
+	public String name = "default_name";
+	public String surname = "default_surname"; 
+	// Сразу заполнил чтобы тупо показать что работает, при создании объекта
+	
+	
+	public Person_for_5_task(String name, String surname)
+	{
+		this.name = name;
+		this.surname = surname;
+	}
+	
+	
+	public String toString() { 
+		return String.format("Name: %s Surname: %s", this.name, this.surname);
+	} 
+}

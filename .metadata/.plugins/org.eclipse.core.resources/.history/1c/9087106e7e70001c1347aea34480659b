@@ -1,0 +1,6 @@
+package core;
+
+public class firm {
+	private string NameFirm;
+	
+}

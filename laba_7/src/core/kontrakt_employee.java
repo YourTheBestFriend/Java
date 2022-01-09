@@ -1,0 +1,36 @@
+package core;
+
+public class kontrakt_employee extends Employee {
+
+	public kontrakt_employee()
+	{
+		super();
+	}
+	public kontrakt_employee(String FIO, int Dolzhnost, double Oklad)
+	{
+		super(FIO, Dolzhnost, Oklad);
+	}
+	public double return_zarplatu()
+	{
+		System.out.println("Оклад составляет - " + getOklad());
+		int doklad =  getDolzhnost();
+		System.out.println("Должность - " + doklad + " зарплата увеличивается на " + (10* doklad) + "%");
+		System.out.println("Должность - " + doklad + " зарплата увеличивается на " + (10 * doklad) + "%");
+		double okl = 0;
+		try
+		{
+			// Вызовется исключение т.к Dolzhnost = 0 например надо указать другое
+			// this.setDolzhnost(5); // раскоментить чтобы не было исключения
+			 okl = Oklad + (Oklad * (doklad * 10) / 100); // + процентная ставка от должности
+		}
+		catch(ArithmeticException ex)
+		{
+			System.out.println("Exception " + ex.getMessage());
+		}
+		catch(Exception ex2)
+		{
+			System.out.println("Exception " + ex2.getMessage());
+		}
+		return okl;
+	}
+}

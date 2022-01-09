@@ -1,0 +1,228 @@
+package for_exeption_laba5;
+import java.util.HashMap;
+import java.util.InputMismatchException;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Scanner; // Консольный ввод import java.util.Scanner;
+
+
+// Т.к они все в одном пакете то не надо импортить их /// ЭТО полная копия проекта laba5 + добавление исключений по заданию
+///////////////////////////////////////// НАПРИМЕР РЕАЛИЗОВАЛ ИСКЛЮЧЕНИЯ ВО 2 задании
+
+public class for_exeption_laba5 {
+	
+	// My metods
+	public static void HashMapForEntrySet(HashMap<String, Product> x)
+	{
+		System.out.print("Вызвал в цикле для каждого entrySet()"); // Цикл убрал он не нужн был
+		System.out.println("\n==1==\n" + x.entrySet());
+	}
+	
+	public static void HashMapForKeySet(HashMap<String, Product> x)
+	{
+		System.out.print("Вызвал в цикле для каждого keySet()"); // тут тоже
+		System.out.println("\n==2==\n" + x.keySet());
+	}
+	
+	public static void printValueHashMap(HashMap<String, Product> x)
+	{
+		System.out.println("==3==\nprintValueHashMap");
+		System.out.println(x.values());
+	}
+	
+	
+	// for 2 task
+	public static void SortStudent(ArrayList<Student> listStudent)
+	{
+		// Сначала нахожу средний балл 
+		
+		int sredn = 0;
+		for (int i = 0; i < listStudent.size(); i++)
+		{
+			sredn = 0; // Зануляю для каждого студента
+			for (int j = 0; j < listStudent.get(i).marks.size(); j++) // listStudent.get(i).marks.size()  Проверяю каждый список отметок у каждого студента
+			{
+				sredn += listStudent.get(i).marks.get(j);
+			}
+			// Посчитал
+			try 
+			{
+				sredn /= listStudent.get(i).marks.size();
+				//sredn /= 0; // Чисто для проверки исключени, среднее делю на ноль типо нету вообще оценок
+			}
+			catch(ArithmeticException ex)
+			{
+				System.out.println("EXCEPTION 3: " + ex.getMessage());
+			}
+			
+			if (sredn < 3)
+			{
+				listStudent.remove(i);
+			}
+			else
+			{
+				// Значит больше или равно 3 // >=3
+				if (listStudent.get(i).getNumKursa() < 4) // Проверка зачем его отправлять на 5 курс если например всего 4
+				{
+					listStudent.get(i).setNumKursa(listStudent.get(i).getNumKursa()+1);
+				}	
+			}
+		}			
+	}
+	
+	// task 2.2
+	public static void printStudentInList_vibor_pocursu(ArrayList<Student> listStudent, int numCourse)
+	{
+		for (int i = 0; i < listStudent.size(); i++)
+		{
+			if (listStudent.get(i).getNumKursa() == numCourse) // Если совпадает
+			{
+				System.out.println("Student name: " + listStudent.get(i).getName());
+			}
+		}
+	}
+	
+	// for task 3
+	public static void pet__HashMapForKeySet(HashMap<String, Pet> x)
+	{
+		System.out.println(x.keySet());
+	}
+	
+	// main
+	public static void main(String[] args) throws Exception{
+		
+		//////////////////////////////////// 1
+//		System.out.println("Task 1");
+//		HashMap<String, Product> myHashMapProducts = new HashMap<String, Product>();
+//		
+//		// Добавлю 3 продукта 
+//		Product p1 = new Product(1);
+//		Product p2 = new Product(2);
+//		Product p3 = new Product(3);
+//		
+//		myHashMapProducts.put("orange", p1);
+//		myHashMapProducts.put("banana", p2);
+//		myHashMapProducts.put("tomato", p3);
+//		
+//		// EntrySet, KeySet
+//		HashMapForEntrySet(myHashMapProducts);
+//		HashMapForKeySet(myHashMapProducts);
+//		
+//		// print values
+//		printValueHashMap(myHashMapProducts);
+		
+		//////////////////////////////////// 2
+		System.out.println("\nTask 2");
+		// Список студентов
+		ArrayList<Student> listStudent = new ArrayList<Student>(2); // МОЖЕТ БЫТЬ ТОЛЬКО 2 студента
+		
+		// Для ввода 
+		Scanner in = new Scanner(System.in);
+		
+		// Первый студент и его оценки
+		ArrayList<Integer> listMarksMatvey = new ArrayList<Integer>();
+		// {9, 8, 9, 10};
+		// ЗАКОМЕНТИЛ ЧТОБЫ ВЫПОЛНИТЬ ЗАДАНИЕ ПРОВЕРКА НА ВВОД
+//		listMarksMatvey.add(9);
+//		listMarksMatvey.add(8);
+//		listMarksMatvey.add(9);
+//		listMarksMatvey.add(10);
+		
+		// Второй студент и его оценки
+		ArrayList<Integer> listMarksNikita = new ArrayList<Integer>();
+		// {3, 2, 1, 2};
+//		listMarksNikita.add(3);
+//		listMarksNikita.add(2);
+//		listMarksNikita.add(1);
+//		listMarksNikita.add(2);
+				
+		
+		// Третий студент и его оценки
+		ArrayList<Integer> listMarksPeta = new ArrayList<Integer>();
+		// {10, 5, 8, 9};
+//		listMarksPeta.add(10);
+//		listMarksPeta.add(5);
+//		listMarksPeta.add(8);
+//		listMarksPeta.add(9);
+		
+		
+		// Для порверки на ввод валидных оценок
+		try
+		{
+			///// import java.util.Scanner; // Консольный ввод import java.util.Scanner;
+			int mark;
+			for(int i = 0; i < 4; i++)
+			{
+				System.out.print("Введите число (Оценка для Матвея): ");
+				mark = in.nextInt();
+				
+				// Например если оценка отрицательная, а такой не может быть то я генерю свое исключение
+				if (mark < 0)
+				{
+					throw new Exception("EXCEPTION 1: Вы ввели отрицательное число Матвею"); // Для проверки ввести в одну из оценок отрицательное значение
+				}
+				
+				listMarksMatvey.add(mark); // Оценки Матвея
+				
+				System.out.print("Введите число (Оценка для Никиты): ");
+				mark = in.nextInt();
+				if (mark < 0)
+				{
+					throw new Exception("EXCEPTION 1: Вы ввели отрицательное число Никите");
+				}
+				
+				listMarksNikita.add(mark);
+				System.out.print("Введите число (Оценка для Пети): ");
+				mark = in.nextInt();
+				if (mark < 0)
+				{
+					throw new Exception("EXCEPTION 1: Вы ввели отрицательное число Пете");
+				}
+				
+				listMarksPeta.add(mark);
+			}
+		}
+		catch(InputMismatchException ex) // Например проверка чтобы словить ввести вещественное или символы
+		{
+			System.out.println("Вы не смогли заполнить оценки:\nEXCEPTION 2: " + ex.getMessage());
+		}
+		
+		Student st1 = new Student("Matvey", 992, 3, listMarksMatvey); // Создал самого студента Матвей со списком оценок
+		Student st2 = new Student("Nikita", 992, 3, listMarksNikita);
+		Student st3 = new Student("Peta", 992, 3, listMarksPeta);
+		
+		// Добавляю самих студентов НО не прокатит т.к пытаюсь запихнуть больше двух студентов. А размерность листа 2
+		try
+		{
+			listStudent.add(st1);
+			listStudent.add(st2);
+			listStudent.add(st3);	
+		}
+		catch(ArrayIndexOutOfBoundsException ex)
+		{
+			System.out.println("EXEPTION 3" + ex.getMessage());
+		}
+		
+		
+		// Тест функций
+		SortStudent(listStudent);
+		printStudentInList_vibor_pocursu(listStudent, 3); // Матвея не распечатает т.к он перевелся на next курс
+	
+		
+		//////////////////////////////////// 3
+//		System.out.println("\nTask 3");
+//		HashMap<String, Pet> myHashMapPets = new HashMap<String, Pet>();
+//		
+//		Cat pet1 = new Cat("Masyanya");
+//		Dog pet2 = new Dog("Sharik");
+//		Parrot pet3 = new Parrot("Parrot_1");
+//		
+//		myHashMapPets.put(pet1.getName(), pet1);
+//		myHashMapPets.put(pet2.getName(), pet2);
+//		myHashMapPets.put(pet3.getName(), pet3);
+//		
+//		pet__HashMapForKeySet(myHashMapPets);
+		
+	}
+	
+}

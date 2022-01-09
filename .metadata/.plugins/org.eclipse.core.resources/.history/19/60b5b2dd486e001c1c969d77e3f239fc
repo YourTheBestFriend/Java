@@ -1,0 +1,29 @@
+package application;
+
+public class example {
+	
+	public static void main(String[] args) {
+		String s="I like Java!!!";
+		Str(s);
+		
+		System.out.println(s.charAt(s.length()-1));
+		
+		if(s.endsWith("!!!")) {
+			System.out.println("Заканчивается на !!!");
+		}
+		else {
+			System.out.println("Не заканчивается на !!!");
+		}
+		
+		if(s.startsWith("I like")) {
+			System.out.println("Начинается с I like");
+		}
+		else {
+			System.out.println("Не начинается с I like");
+		}
+		
+	}
+	public static void Str(String s) {
+		System.out.println(s);
+	}
+}

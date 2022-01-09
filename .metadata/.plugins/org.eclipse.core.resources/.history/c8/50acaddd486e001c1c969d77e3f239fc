@@ -1,0 +1,22 @@
+package task7;
+
+import static java.lang.System.out;
+import java.util.ArrayList;
+
+public class Main 
+{
+	public static void main(String[] args) 
+	{
+		for(String x : find())
+			out.println(x);
+	}
+	
+	public static String[] find()
+	{
+		String string= "Versions: Java 5, Java 6, Java 7, Java 8, Java 12.";
+		StringBuffer s= new StringBuffer(string);
+		string = s.delete(string.length()-1,string.length()).toString();
+		String res = string.substring(string.indexOf(' ')+1); 
+		Return = res.split(", ");
+	}
+}

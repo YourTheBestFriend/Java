@@ -1,0 +1,56 @@
+package application;
+
+public class example {
+	
+	public static void main(String[] args) {
+		String s="I like Java!!!";
+		//а
+		Str(s);
+		//б
+		System.out.println(s.charAt(s.length()-1));
+		//в
+		if(s.endsWith("!!!")) {
+			System.out.println("Заканчивается на !!!");
+		}
+		else {
+			System.out.println("Не заканчивается на !!!");
+		}
+		//г
+		if(s.startsWith("I like")) {
+			System.out.println("Начинается с I like");
+		}
+		else {
+			System.out.println("Не начинается с I like");
+		}
+		//д
+		if(s.contains("Java")) {
+			System.out.println("Содержит слово Java");
+		}
+		else {
+			System.out.println("Не содержит слово Java");
+		}
+		//e
+		System.out.println("Позиция подстроки Java находится на:"+s.indexOf("Java"));
+		//ж
+		String d=s;
+		d.replace('a', 'o');
+		System.out.println(d);
+		//з
+		String u=s;
+		u.toUpperCase();
+		System.out.println(u);
+		//и
+		String l=s;
+		l.toLowerCase();
+		//к
+		System.out.println(l);
+		s.substring(s.indexOf("Java"), s.indexOf("Java")+4);
+		System.out.println(s);
+		//в
+		StringBuilder st=new StringBuilder("Java = love");
+		st.replace(st.indexOf("="), st.indexOf("=")+1, "равно")
+	}
+	public static void Str(String s) {
+		System.out.println(s);
+	}
+}
