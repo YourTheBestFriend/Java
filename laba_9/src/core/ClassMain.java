@@ -57,8 +57,15 @@ public class ClassMain {
 			}
 		});
 		
+		// Что бы тестануть 3 задание не забыть закоментить, а то там в цикле кручу бесканечно
 		FirstThread.start();
 		SecondThread.start();
+		
+		// Task 3
+		System.out.println("[Task 3]");
+		
+		int buffer;
+		boolean empty_or_not = true;
 		
 		
 	}
