@@ -1,9 +1,0 @@
-package core;
-
-public class class_laba7 {
-	
-	// throws – используется в сигнатуре методов для предупреждения, о том что метод может выбросить исключение.
-	public static void main(String[] args) throws Exception {
-		
-	}
-}

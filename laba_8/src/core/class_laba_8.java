@@ -11,7 +11,7 @@ public class class_laba_8 {
 		// Task 1
 		System.out.println("Task 1");
 		String text = "name: Goncharov Matvey Nickolaevich\nyearsOld: 17\nsex: M\n"; // Например данные для записи, информация о себе
-		try(FileWriter writer = new FileWriter("C:\\Users\\Xhref\\eclipse-workspace\\laba_8\\src\\core\\task1.txt"))
+		try(FileWriter writer = new FileWriter("C:\\\\Users\\\\Matthew\\\\Desktop\\\\Java\\\\laba_8\\\\src\\\\core\\\\task1.txt"))
 	    {	 
 			writer.write(text);
 	        writer.flush();
@@ -23,7 +23,7 @@ public class class_laba_8 {
 	           System.out.println(ex.getMessage());
 	    } 
 		// вывод из файла
-		try(FileReader reader = new FileReader("C:\\Users\\Xhref\\eclipse-workspace\\laba_8\\src\\core\\task1.txt"))
+		try(FileReader reader = new FileReader("C:\\\\Users\\\\Matthew\\\\Desktop\\\\Java\\\\laba_8\\\\src\\\\core\\\\task1.txt"))
         {
            // читаем посимвольно
             int c;
@@ -38,7 +38,7 @@ public class class_laba_8 {
 		{
             System.out.println(ex.getMessage());
         } 
-		File fileobj = new File("C:\\Users\\Xhref\\eclipse-workspace\\laba_8\\src\\core\\task1.txt");
+		File fileobj = new File("C:\\Users\\Matthew\\Desktop\\Java\\laba_8\\src\\core\\task1.txt");
 		System.out.println("Вывод информации о файле:");
 		System.out.println("Name of file:" + fileobj.getName());
 		System.out.println("Size of file:" + fileobj.length() + " Bytes");
@@ -57,7 +57,7 @@ public class class_laba_8 {
 		System.out.println("\nTask 2");
 		int[] arr_10 = new int[10];
 		int sredn_in_arr = 0;
-		try(FileReader reader2 = new FileReader("C:\\Users\\Xhref\\eclipse-workspace\\laba_8\\src\\core\\f.txt"))
+		try(FileReader reader2 = new FileReader("C:\\Users\\Matthew\\Desktop\\Java\\laba_8\\src\\core\\f.txt"))
         {
 			int i = 0;
 			while (true)
@@ -91,7 +91,7 @@ public class class_laba_8 {
 		Random rand = new Random();
 		int int_random = rand.nextInt(10); 
 		int colvo_randomn = 20;
-		try(FileWriter writer = new FileWriter("C:\\Users\\Xhref\\eclipse-workspace\\laba_8\\src\\core\\f_4.txt", false))
+		try(FileWriter writer = new FileWriter("C:\\Users\\Matthew\\Desktop\\Java\\laba_8\\src\\core\\f_4.txt", false))
 	    {	 
 			for (int i = 0; i < colvo_randomn;i++)
 			{
@@ -110,7 +110,7 @@ public class class_laba_8 {
 		
 		// Теперь тупо считываю и записываю в нужный файл, .... Записать в файл g все четные числа файла из f, а в файл h – все нечетные.
 		String[] arr_string;
-		try(FileReader reader2 = new FileReader("C:\\Users\\Xhref\\eclipse-workspace\\laba_8\\src\\core\\f_4.txt"))
+		try(FileReader reader2 = new FileReader("C:\\\\Users\\\\Matthew\\\\Desktop\\\\Java\\\\laba_8\\\\src\\\\core\\\\f_4.txt"))
         {
 			 BufferedReader reader = new BufferedReader(reader2);
 	         String line;
@@ -128,7 +128,7 @@ public class class_laba_8 {
 	            
 	             
 	             // В этот файл записываю четные
-	             try(FileWriter writer_g = new FileWriter("C:\\Users\\Xhref\\eclipse-workspace\\laba_8\\src\\core\\g__.txt"))
+	             try(FileWriter writer_g = new FileWriter("C:\\\\Users\\\\Matthew\\\\Desktop\\\\Java\\\\laba_8\\\\src\\\\core\\\\g__.txt"))
 	             {
 	            	 for (int i = 0; i < arr_string.length; i++)
 		             {
@@ -146,7 +146,7 @@ public class class_laba_8 {
 	     	     }
 	             
 	             // В этот файл записываю не четные
-	             try(FileWriter writer_h = new FileWriter("C:\\Users\\Xhref\\eclipse-workspace\\laba_8\\src\\core\\h__.txt"))
+	             try(FileWriter writer_h = new FileWriter("C:\\\\Users\\\\Matthew\\\\Desktop\\\\Java\\\\laba_8\\\\src\\\\core\\\\h__.txt"))
 	             {
 	            	 for (int i = 0; i < arr_string.length; i++)
 		             {
@@ -176,7 +176,7 @@ public class class_laba_8 {
 		System.out.println("\nTask 4"); 
 		String[] arr_string_2;
 		double sredn_temp = 0;
-		try(FileReader reader4 = new FileReader("C:\\Users\\Xhref\\eclipse-workspace\\laba_8\\src\\core\\temp.dat"))
+		try(FileReader reader4 = new FileReader("C:\\\\Users\\\\Matthew\\\\Desktop\\\\Java\\\\laba_8\\\\src\\\\core\\\\temp.dat"))
         {
 			 BufferedReader reader_2 = new BufferedReader(reader4);
 	         String line;
@@ -209,9 +209,9 @@ public class class_laba_8 {
 		// с сохранением порядка следования - тупо друг за другом и это не имеется ввиду числа сортануть и записать и т.д
 		System.out.println("\nTask 5"); 
 		// Для быстроты действия сразу с клавы ввел значения в файл 
-		try(FileWriter writer2 = new FileWriter("C:\\Users\\Xhref\\eclipse-workspace\\laba_8\\src\\core\\h_task5.txt"))
+		try(FileWriter writer2 = new FileWriter("C:\\\\Users\\\\Matthew\\\\Desktop\\\\Java\\\\laba_8\\\\src\\\\core\\\\h_task5.txt"))
         {
-			try(FileReader reader2 = new FileReader("C:\\Users\\Xhref\\eclipse-workspace\\laba_8\\src\\core\\f_task5.txt"))
+			try(FileReader reader2 = new FileReader("C:\\\\Users\\\\Matthew\\\\Desktop\\\\Java\\\\laba_8\\\\src\\\\core\\\\f_task5.txt"))
 	        {
 				BufferedReader reader = new BufferedReader(reader2);
 		         String line;
@@ -232,7 +232,7 @@ public class class_laba_8 {
 	            System.out.println(ex.getMessage());
 	        } 
 			writer2.write(" "); 
-			try(FileReader reader2 = new FileReader("C:\\Users\\Xhref\\eclipse-workspace\\laba_8\\src\\core\\g_task5.txt"))
+			try(FileReader reader2 = new FileReader("C:\\\\Users\\\\Matthew\\\\Desktop\\\\Java\\\\laba_8\\\\src\\\\core\\\\g_task5.txt"))
 	        {
 				BufferedReader reader = new BufferedReader(reader2);
 		         String line;
@@ -265,7 +265,7 @@ public class class_laba_8 {
 		// Записал 10 чисел в файл f_task6.txt
 		// запихнул их сразу в строку 
 		String str_pol_otr = "1 2 -3 4 5 -6 -7 8 9 10";
-		try(FileWriter writer2 = new FileWriter("C:\\Users\\Xhref\\eclipse-workspace\\laba_8\\src\\core\\f_task6.txt"))
+		try(FileWriter writer2 = new FileWriter("C:\\\\Users\\\\Matthew\\\\Desktop\\\\Java\\\\laba_8\\\\src\\\\core\\\\f_task6.txt"))
         {
 			writer2.write(str_pol_otr);
 			writer2.close();
@@ -277,7 +277,7 @@ public class class_laba_8 {
 		
 		int[] arr_10_for_find_polozh_znach = new int[10];
 		
-		try(FileReader reader2 = new FileReader("C:\\Users\\Xhref\\eclipse-workspace\\laba_8\\src\\core\\f_task6.txt"))
+		try(FileReader reader2 = new FileReader("C:\\Users\\Matthew\\Desktop\\Java\\laba_8\\src\\core\\f_task6.txt"))
         {
 			BufferedReader reader = new BufferedReader(reader2);
 	         String line;

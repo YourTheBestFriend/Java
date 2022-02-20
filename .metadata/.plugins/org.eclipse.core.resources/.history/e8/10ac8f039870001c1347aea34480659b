@@ -1,9 +1,0 @@
-package core;
-
-public class class_laba7 {
-
-	public static void main(String[] args) throws Exception {
-		
-		
-	}
-}
