@@ -1,5 +1,8 @@
 package core;
 
+import java.util.ArrayList;
+import java.util.Random;
+
 public class ClassMain {
 	
 	static forThread mThing; //mThing - объект класса, реализующего интерфейс Runnable
@@ -58,14 +61,14 @@ public class ClassMain {
 		});
 		
 		// Что бы тестануть 3 задание не забыть закоментить, а то там в цикле кручу бесканечно
-		FirstThread.start();
-		SecondThread.start();
+		//FirstThread.start();
+		//SecondThread.start();
 		
 		// Task 3
 		System.out.println("[Task 3]");
 		
-		int buffer;
-		boolean empty_or_not = true;
+		ArrayList<Integer> buffer = new ArrayList();
+		
 		
 		/*
 		 Дано два потока — производитель и потребитель.
@@ -76,8 +79,55 @@ public class ClassMain {
 		 должен ждать, пока потребитель заберёт данные и место освободится.
 		 */
 		
+		Thread myThread_1 = new Thread(new Runnable()
+		{
+			public void run()
+			{
+				while(true)
+				{
+					try 
+					{
+						Thread.sleep(5000);
+						Random rnd = new Random();
+						buffer.add(rnd.nextInt(100));
+					} 
+					catch (InterruptedException e)
+					{
+						e.printStackTrace();
+					}
+				}	
+			}
+		});
 		
+		Thread myThread_2 = new Thread(new Runnable()
+		{
+			public void run()
+			{
+				while(true)
+				{
+					try 
+					{
+						Thread.sleep(1000);
+						if (!buffer.isEmpty())
+						{
+							System.out.println("Удалось считать буферную переменну: " + buffer.get(0));
+							buffer.clear();
+						}
+						else
+						{
+							System.out.println("Переменная пока что не доступна");
+						}
+					} 
+					catch (InterruptedException e)
+					{
+						e.printStackTrace();
+					}
+				}	
+			}
+		});
 		
+		//myThread_1.start();
+		//myThread_2.start();
 		
 	}
 }
