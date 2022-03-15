@@ -1,4 +1,4 @@
-///////////////////////// Предположительно что в правую руку не попадает то нико и не кушает, нужно найти в чем причина
+///////////////////////// Предположительно что в правую руку не попадает то нико и не кушает, нужно найти в чем причина ++ РЕШЕНО
 
 
 package core;
@@ -101,7 +101,7 @@ public class Class_main
 							// Еще интересно может получиться если поочередно а не сначала левые руки заполнить, хотя там все равно рандом
 							////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// Левая рука / Потом Правая и чередуется
 							int x1 = rnd.nextInt(2); // Было чисто в проверкае, но для доставерности решил сделать для каждого философа и его рук и разбил по x1, x2 и т.д
-							if (x1 == 1  && array_eating[2] && array_eating[array_eating.length-2-1] != true) // чтобы последний философ в круге не держалвилку, но -2 т.к это леваю рука по массиву
+							if (x1 == 1  && array_eating[2] != true && array_eating[array_eating.length-2-1] != true) // чтобы последний философ в круге не держалвилку, но -2 т.к это леваю рука по массиву
 							{
 								array_eating[0] = true;
 							}		
@@ -114,7 +114,7 @@ public class Class_main
 								}
 								
 							}
-							if (x1 == 1 && array_eating[array_eating.length-1] && array_eating[3] != true)
+							if (x1 == 1 && array_eating[array_eating.length-1] != true && array_eating[3] != true)
 							{
 								array_eating[1] = true;
 							}
@@ -138,7 +138,7 @@ public class Class_main
 								}
 								
 							}
-							if (x2 == 1 && array_eating[1] && array_eating[5] != true)
+							if (x2 == 1 && array_eating[1] != true && array_eating[5] != true)
 							{
 								array_eating[3] = true;
 							}
@@ -150,7 +150,7 @@ public class Class_main
 								}
 							}
 							int x3 = rnd.nextInt(2);
-							if (x3 == 1 && array_eating[2] && array_eating[6] != true)
+							if (x3 == 1 && array_eating[2] != true && array_eating[6] != true)
 							{
 								array_eating[4] = true;
 							}
@@ -161,7 +161,7 @@ public class Class_main
 									array_eating[4] = false;
 								}
 							}
-							if (x3 == 1 && array_eating[3] && array_eating[7] != true)
+							if (x3 == 1 && array_eating[3] != true && array_eating[7] != true)
 							{
 								array_eating[5] = true;
 							}
@@ -173,7 +173,7 @@ public class Class_main
 								}
 							}
 							int x4 = rnd.nextInt(2);
-							if (x4 == 1 && array_eating[4] && array_eating[8] != true)
+							if (x4 == 1 && array_eating[4] != true && array_eating[8] != true)
 							{
 								array_eating[6] = true;
 							}
@@ -184,7 +184,7 @@ public class Class_main
 									array_eating[6] = false;
 								}
 							}
-							if (x4 == 1 && array_eating[5] && array_eating[9] != true)
+							if (x4 == 1 && array_eating[5] != true && array_eating[9] != true)
 							{
 								array_eating[7] = true;
 							}
@@ -196,7 +196,7 @@ public class Class_main
 								}
 							}
 							int x5 = rnd.nextInt(2);
-							if (x5 == 1 && array_eating[6] && array_eating[0] != true)
+							if (x5 == 1 && array_eating[6] != true && array_eating[0] != true)
 							{
 								array_eating[8] = true;
 							}
@@ -207,7 +207,7 @@ public class Class_main
 									array_eating[8] = false;
 								}
 							}
-							if (x5 == 1 && array_eating[7] && array_eating[array_eating.length-2-1] != true)
+							if (x5 == 1 && array_eating[7] != true && array_eating[array_eating.length-2-1] != true)
 							{
 								array_eating[9] = true;
 							}
