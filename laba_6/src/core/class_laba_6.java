@@ -1,11 +1,10 @@
 package core;
 
-import static java.lang.System.out;
-
 import java.util.ArrayList;
 import java.util.Formatter;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
 
 import java.util.Scanner;
 

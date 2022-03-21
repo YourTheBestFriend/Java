@@ -244,8 +244,7 @@ public class Class_main
 					}	
 				}
 			});
-		 	
-		 	myThread_1.start();	 
+		 	myThread_1.start();
 	}
 }
 

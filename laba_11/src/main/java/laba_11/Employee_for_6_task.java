@@ -1,4 +1,4 @@
-package core;
+package laba_11;
 
 public class Employee_for_6_task
 {
