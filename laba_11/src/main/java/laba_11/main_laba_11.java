@@ -1,7 +1,6 @@
 package laba_11;
 
 import java.util.ResourceBundle;
-
 import java.util.Locale;
 import java.util.PropertyResourceBundle;
 
@@ -25,8 +24,7 @@ public class main_laba_11 {
 		
 		// task 2
 		System.out.println("\nTask 2");
-		Employee_for_6_task[] emp1 = new Employee_for_6_task[] { new Employee_for_6_task("fullname1",557.10), new Employee_for_6_task("fullname2",725.20), new Employee_for_6_task("fullname3",345.56)}; // Заполнил
+		Employee_for_6_task[] emp1 = new Employee_for_6_task[] { new Employee_for_6_task("fullname1", 557.10), new Employee_for_6_task("fullname2", 725.20), new Employee_for_6_task("fullname3", 345.56)}; // Заполнил
 		Report_for_6_task.generateReport(emp1);	
-		
 	}
 }
