@@ -1197,3 +1197,24 @@
 2022-03-26 14:40:01,711 [Worker-4: Decoration Calculation] WARN  org.eclipse.jgit.util.FS - Cannot run program "\usr\bin\git" (in directory "\usr\bin"): CreateProcess error=2, Не удается найти указанный файл
 2022-03-29 17:43:05,049 [Worker-3: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
 2022-03-29 17:43:07,161 [Worker-6: Decoration Calculation] WARN  org.eclipse.jgit.util.FS - Cannot run program "\usr\bin\git" (in directory "\usr\bin"): CreateProcess error=2, Не удается найти указанный файл
+2022-04-04 21:50:22,265 [Worker-5: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2022-04-04 21:50:24,064 [Worker-4: Decoration Calculation] WARN  org.eclipse.jgit.util.FS - Cannot run program "\usr\bin\git" (in directory "\usr\bin"): CreateProcess error=2, Не удается найти указанный файл
+2022-04-04 21:50:40,298 [Worker-0: Launching main_laba_11] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1251 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-04-04 21:50:40,309 [Worker-0: Launching main_laba_11] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2022-04-04 21:50:40,338 [Worker-0: Launching main_laba_11] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1251 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-04-04 21:50:40,339 [Worker-0: Launching main_laba_11] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-04-04 21:53:23,823 [Worker-18: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1251 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-04-04 21:53:23,836 [Worker-18: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2022-04-04 21:53:23,839 [Worker-18: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1251 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-04-04 21:53:23,841 [Worker-18: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-04-08 13:15:19,340 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2022-04-08 13:15:21,493 [Worker-3: Decoration Calculation] WARN  org.eclipse.jgit.util.FS - Cannot run program "\usr\bin\git" (in directory "\usr\bin"): CreateProcess error=2, Не удается найти указанный файл
+2022-04-09 14:46:53,570 [Worker-4: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2022-04-09 14:46:55,657 [Worker-3: Decoration Calculation] WARN  org.eclipse.jgit.util.FS - Cannot run program "\usr\bin\git" (in directory "\usr\bin"): CreateProcess error=2, Не удается найти указанный файл
+2022-04-09 14:47:07,854 [Worker-4: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Updating Gradle version information cache failed. Using outdated cache.
+2022-04-09 14:49:47,216 [Worker-18: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1251 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-04-09 14:49:47,227 [Worker-18: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2022-04-09 14:49:47,250 [Worker-18: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1251 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-04-09 14:49:47,251 [Worker-18: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-04-12 13:03:40,271 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2022-04-12 13:03:41,205 [Worker-0: Refreshing workspace] WARN  org.eclipse.jgit.util.FS - Cannot run program "\usr\bin\git" (in directory "\usr\bin"): CreateProcess error=2, Не удается найти указанный файл

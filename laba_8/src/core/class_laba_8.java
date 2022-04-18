@@ -10,36 +10,36 @@ public class class_laba_8 {
 		
 		// Task 1
 		System.out.println("Task 1");
-		String text = "name: Goncharov Matvey Nickolaevich\nyearsOld: 17\nsex: M\n"; // Например данные для записи, информация о себе
+		String text = "name: Goncharov Matvey Nickolaevich\nyearsOld: 17\nsex: M\n"; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅ
 		try(FileWriter writer = new FileWriter("C:\\\\Users\\\\Matthew\\\\Desktop\\\\Java\\\\laba_8\\\\src\\\\core\\\\task1.txt"))
 	    {	 
 			writer.write(text);
 	        writer.flush();
-	        System.out.println("Данные записаны в файл\n");
+	        System.out.println("пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅ\n");
 	        writer.close();
 	    }
 	    catch(IOException ex)
 		{       
 	           System.out.println(ex.getMessage());
 	    } 
-		// вывод из файла
-		try(FileReader reader = new FileReader("C:\\\\Users\\\\Matthew\\\\Desktop\\\\Java\\\\laba_8\\\\src\\\\core\\\\task1.txt"))
+		// пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
+		try(FilegiveBooks giveBooks = new FilegiveBooks("C:\\\\Users\\\\Matthew\\\\Desktop\\\\Java\\\\laba_8\\\\src\\\\core\\\\task1.txt"))
         {
-           // читаем посимвольно
+           // пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
             int c;
-            while((c=reader.read())!=-1){
+            while((c=giveBooks.read())!=-1){
                  
                 System.out.print((char)c);
             } 
-            System.out.println("Вы успешно прочитали данные из файла\n");
-            reader.close();
+            System.out.println("пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ\n");
+            giveBooks.close();
         }
         catch(IOException ex)
 		{
             System.out.println(ex.getMessage());
         } 
 		File fileobj = new File("C:\\Users\\Matthew\\Desktop\\Java\\laba_8\\src\\core\\task1.txt");
-		System.out.println("Вывод информации о файле:");
+		System.out.println("пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ:");
 		System.out.println("Name of file:" + fileobj.getName());
 		System.out.println("Size of file:" + fileobj.length() + " Bytes");
 		System.out.println("Last modified:" + fileobj. lastModified());
@@ -47,8 +47,8 @@ public class class_laba_8 {
 		System.out.println("Path:" + fileobj.getPath());
 		System.out.println("Abs Path:" + fileobj.getAbsolutePath());
 		System.out.println("File " + (fileobj.exists() ? "exists" : " not exist"));
-		System.out.println(fileobj.canRead() ? "can read" : "can’t read");
-		System.out.println(fileobj.canWrite() ? "can write" : "can’t write");
+		System.out.println(fileobj.canRead() ? "can read" : "canпїЅt read");
+		System.out.println(fileobj.canWrite() ? "can write" : "canпїЅt write");
 		System.out.println("This is " + (fileobj.isDirectory() ? " " : "not") + " directory");
 		System.out.println("This is "+ (fileobj.isAbsolute() ? "absolute" : " not absolute") +
 		(fileobj.isFile() ? " normal file" : " a named pipe"));
@@ -57,15 +57,15 @@ public class class_laba_8 {
 		System.out.println("\nTask 2");
 		int[] arr_10 = new int[10];
 		int sredn_in_arr = 0;
-		try(FileReader reader2 = new FileReader("C:\\Users\\Matthew\\Desktop\\Java\\laba_8\\src\\core\\f.txt"))
+		try(FilegiveBooks giveBooks2 = new FilegiveBooks("C:\\Users\\Matthew\\Desktop\\Java\\laba_8\\src\\core\\f.txt"))
         {
 			int i = 0;
 			while (true)
 			{
-				// как вариант работы с числами
-				char c = (char) reader2.read();
+				// пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+				char c = (char) giveBooks2.read();
 				int num =  c - '0';
-				if (num != -16) // -16 это пробел
+				if (num != -16) // -16 пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 				{
 					arr_10[i] = num;
 					sredn_in_arr += arr_10[i];
@@ -78,8 +78,8 @@ public class class_laba_8 {
 				}
 			}
 			sredn_in_arr /= arr_10.length;
-			System.out.print("\nСреднее из чисел: " + sredn_in_arr);
-			reader2.close();
+			System.out.print("\nпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ: " + sredn_in_arr);
+			giveBooks2.close();
         }
         catch(IOException ex)
 		{
@@ -97,10 +97,10 @@ public class class_laba_8 {
 			{
 				int_random = rand.nextInt(100); 
 				System.out.print(int_random + " ");
-				writer.write(Integer.toString(int_random) + " "); // Допустим позаписывал как строку
+				writer.write(Integer.toString(int_random) + " "); // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 			}
 	        writer.flush();
-	        System.out.println("\nДанные записаны в файл\n");
+	        System.out.println("\nпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅ\n");
 	        writer.close();
 	    }
 	    catch(IOException ex)
@@ -108,34 +108,34 @@ public class class_laba_8 {
 	           System.out.println(ex.getMessage());
 	    }
 		
-		// Теперь тупо считываю и записываю в нужный файл, .... Записать в файл g все четные числа файла из f, а в файл h – все нечетные.
+		// пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ, .... пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅ g пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ f, пїЅ пїЅ пїЅпїЅпїЅпїЅ h пїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ.
 		String[] arr_string;
-		try(FileReader reader2 = new FileReader("C:\\\\Users\\\\Matthew\\\\Desktop\\\\Java\\\\laba_8\\\\src\\\\core\\\\f_4.txt"))
+		try(FilegiveBooks giveBooks2 = new FilegiveBooks("C:\\\\Users\\\\Matthew\\\\Desktop\\\\Java\\\\laba_8\\\\src\\\\core\\\\f_4.txt"))
         {
-			 BufferedReader reader = new BufferedReader(reader2);
+			 BufferedgiveBooks giveBooks = new BufferedgiveBooks(giveBooks2);
 	         String line;
 	         while (true) 
 	         {
-	        	 // System.out.println(line);// Для проверки
-	             // считываем остальные строки в цикле
-	             line = reader.readLine(); // тут в каждой строке числа их разбиваю на массив и записываю в файлы g и h
-	             if (line == null) // Чтобы при разбивке не попал нулл в строку
+	        	 // System.out.println(line);// пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+	             // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ
+	             line = giveBooks.readLine(); // пїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ g пїЅ h
+	             if (line == null) // пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 	             {
 	            	 break;
 	             }
-	             // Разбил на строки по пробелам, теперь можно пройтись по ним  
+	             // пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅ  
 	             arr_string = line.split(" ");
 	            
 	             
-	             // В этот файл записываю четные
+	             // пїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 	             try(FileWriter writer_g = new FileWriter("C:\\\\Users\\\\Matthew\\\\Desktop\\\\Java\\\\laba_8\\\\src\\\\core\\\\g__.txt"))
 	             {
 	            	 for (int i = 0; i < arr_string.length; i++)
 		             {
 		            	 if (Integer.parseInt(arr_string[i]) % 2 == 0)
 		            	 {
-		            		 // System.out.println("_______" + Integer.parseInt(arr_string[i])); // Для проверки
-		            		 writer_g.write(arr_string[i] + " "); // Записываю через пробел
+		            		 // System.out.println("_______" + Integer.parseInt(arr_string[i])); // пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+		            		 writer_g.write(arr_string[i] + " "); // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 		            	 }
 		             }
 	            	 writer_g.close();
@@ -145,15 +145,15 @@ public class class_laba_8 {
 	            	 System.out.println(ex.getMessage());
 	     	     }
 	             
-	             // В этот файл записываю не четные
+	             // пїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 	             try(FileWriter writer_h = new FileWriter("C:\\\\Users\\\\Matthew\\\\Desktop\\\\Java\\\\laba_8\\\\src\\\\core\\\\h__.txt"))
 	             {
 	            	 for (int i = 0; i < arr_string.length; i++)
 		             {
 	            		 if (Integer.parseInt(arr_string[i]) % 2 != 0)
 		            	 {
-	            			// System.out.println("_______" + Integer.parseInt(arr_string[i])); // Для проверки
-		            		 writer_h.write(arr_string[i] + " "); // Записываю через пробел
+	            			// System.out.println("_______" + Integer.parseInt(arr_string[i])); // пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+		            		 writer_h.write(arr_string[i] + " "); // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 		            	 }
 		             }
 	            	 writer_h.close();
@@ -164,8 +164,8 @@ public class class_laba_8 {
 	     	     }
 	         }
 
-            System.out.println("Вы успешно прочитали данные из файла\n");
-            reader2.close();
+            System.out.println("пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ\n");
+            giveBooks2.close();
         }
         catch(IOException ex)
 		{
@@ -176,28 +176,28 @@ public class class_laba_8 {
 		System.out.println("\nTask 4"); 
 		String[] arr_string_2;
 		double sredn_temp = 0;
-		try(FileReader reader4 = new FileReader("C:\\\\Users\\\\Matthew\\\\Desktop\\\\Java\\\\laba_8\\\\src\\\\core\\\\temp.dat"))
+		try(FilegiveBooks giveBooks4 = new FilegiveBooks("C:\\\\Users\\\\Matthew\\\\Desktop\\\\Java\\\\laba_8\\\\src\\\\core\\\\temp.dat"))
         {
-			 BufferedReader reader_2 = new BufferedReader(reader4);
+			 BufferedgiveBooks giveBooks_2 = new BufferedgiveBooks(giveBooks4);
 	         String line;
 	         while (true) 
 	         {
-	        	 // System.out.println(line);// Для проверки
-	             // считываем остальные строки в цикле
-	             line = reader_2.readLine(); // тут в каждой строке числа их разбиваю на массив и записываю в файлы g и h
-	             if (line == null) // Чтобы при разбивке не попал нулл в строку
+	        	 // System.out.println(line);// пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+	             // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ
+	             line = giveBooks_2.readLine(); // пїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ g пїЅ h
+	             if (line == null) // пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 	             {
 	            	 break;
 	             }
-	             // Разбил на строки по пробелам, теперь можно пройтись по ним  
+	             // пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅ  
 	             arr_string_2 = line.split(" ");
 	             for (int i = 0; i < arr_string_2.length; i++)
 	             {
 	            	 sredn_temp += Double.parseDouble(arr_string_2[i]);
 	             }
 	             sredn_temp /= arr_string_2.length;
-	             System.out.println("Средняя температура по палате = " + sredn_temp);
-	             sredn_temp = 0; // Занулил т.к чтобы данные не попали в след строку
+	             System.out.println("пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ = " + sredn_temp);
+	             sredn_temp = 0; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ.пїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 	         }
         }
 		catch(IOException ex)
@@ -206,47 +206,47 @@ public class class_laba_8 {
         } 
 		
 		// task 5
-		// с сохранением порядка следования - тупо друг за другом и это не имеется ввиду числа сортануть и записать и т.д
+		// пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ - пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅ.пїЅ
 		System.out.println("\nTask 5"); 
-		// Для быстроты действия сразу с клавы ввел значения в файл 
+		// пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅ 
 		try(FileWriter writer2 = new FileWriter("C:\\\\Users\\\\Matthew\\\\Desktop\\\\Java\\\\laba_8\\\\src\\\\core\\\\h_task5.txt"))
         {
-			try(FileReader reader2 = new FileReader("C:\\\\Users\\\\Matthew\\\\Desktop\\\\Java\\\\laba_8\\\\src\\\\core\\\\f_task5.txt"))
+			try(FilegiveBooks giveBooks2 = new FilegiveBooks("C:\\\\Users\\\\Matthew\\\\Desktop\\\\Java\\\\laba_8\\\\src\\\\core\\\\f_task5.txt"))
 	        {
-				BufferedReader reader = new BufferedReader(reader2);
+				BufferedgiveBooks giveBooks = new BufferedgiveBooks(giveBooks2);
 		         String line;
 		         int line_polozh_elem = 0, index_line_polozh_elem = 0;
 		         while (true) 
 		         {
-		             line = reader.readLine();
-		             if (line == null) // Чтобы при разбивке не попал нулл в строку
+		             line = giveBooks.readLine();
+		             if (line == null) // пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 		             {
 		            	 break;
 		             }
 		             writer2.write(line); 
 		         }
-				reader2.close();
+				giveBooks2.close();
 	        }
 	        catch(IOException ex)
 			{
 	            System.out.println(ex.getMessage());
 	        } 
 			writer2.write(" "); 
-			try(FileReader reader2 = new FileReader("C:\\\\Users\\\\Matthew\\\\Desktop\\\\Java\\\\laba_8\\\\src\\\\core\\\\g_task5.txt"))
+			try(FilegiveBooks giveBooks2 = new FilegiveBooks("C:\\\\Users\\\\Matthew\\\\Desktop\\\\Java\\\\laba_8\\\\src\\\\core\\\\g_task5.txt"))
 	        {
-				BufferedReader reader = new BufferedReader(reader2);
+				BufferedgiveBooks giveBooks = new BufferedgiveBooks(giveBooks2);
 		         String line;
 		         int line_polozh_elem = 0, index_line_polozh_elem = 0;
 		         while (true) 
 		         {
-		             line = reader.readLine();
-		             if (line == null) // Чтобы при разбивке не попал нулл в строку
+		             line = giveBooks.readLine();
+		             if (line == null) // пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 		             {
 		            	 break;
 		             }
 		             writer2.write(line); 
 		         }
-				reader2.close();
+				giveBooks2.close();
 	        }
 	        catch(IOException ex)
 			{
@@ -258,12 +258,12 @@ public class class_laba_8 {
 		{
             System.out.println(ex.getMessage());
         } 
-		System.out.println("Смотрии файл - h_task5.txt");
+		System.out.println("пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ - h_task5.txt");
 		
 		// task 6
 		System.out.println("\nTask 6"); 
-		// Записал 10 чисел в файл f_task6.txt
-		// запихнул их сразу в строку 
+		// пїЅпїЅпїЅпїЅпїЅпїЅпїЅ 10 пїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅ f_task6.txt
+		// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ 
 		String str_pol_otr = "1 2 -3 4 5 -6 -7 8 9 10";
 		try(FileWriter writer2 = new FileWriter("C:\\\\Users\\\\Matthew\\\\Desktop\\\\Java\\\\laba_8\\\\src\\\\core\\\\f_task6.txt"))
         {
@@ -277,21 +277,21 @@ public class class_laba_8 {
 		
 		int[] arr_10_for_find_polozh_znach = new int[10];
 		
-		try(FileReader reader2 = new FileReader("C:\\Users\\Matthew\\Desktop\\Java\\laba_8\\src\\core\\f_task6.txt"))
+		try(FilegiveBooks giveBooks2 = new FilegiveBooks("C:\\Users\\Matthew\\Desktop\\Java\\laba_8\\src\\core\\f_task6.txt"))
         {
-			BufferedReader reader = new BufferedReader(reader2);
+			BufferedgiveBooks giveBooks = new BufferedgiveBooks(giveBooks2);
 	         String line;
 	         int line_polozh_elem = 0, index_line_polozh_elem = 0;
 	         while (true) 
 	         {
-	        	 // System.out.println(line);// Для проверки
-	             // считываем остальные строки в цикле
-	             line = reader.readLine();
-	             if (line == null) // Чтобы при разбивке не попал нулл в строку
+	        	 // System.out.println(line);// пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+	             // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ
+	             line = giveBooks.readLine();
+	             if (line == null) // пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 	             {
 	            	 break;
 	             }
-	             // Разбил на строки по пробелам, теперь можно пройтись по ним  
+	             // пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅ  
 	             arr_string = line.split(" ");
 	             for (int i = 0; i < arr_string.length; i++)
 	             {
@@ -300,10 +300,10 @@ public class class_laba_8 {
             			 line_polozh_elem++;
 	            	 }
 	             }
-	             System.out.println("В строке по индексу " + index_line_polozh_elem + " Кол-во положительных элементов = " + line_polozh_elem);
-	             line_polozh_elem = 0; // Обнуляю т.к в след строке свое кол-во положительных элементов
+	             System.out.println("пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ " + index_line_polozh_elem + " пїЅпїЅпїЅ-пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ = " + line_polozh_elem);
+	             line_polozh_elem = 0; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ.пїЅ пїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅ-пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 	         }
-			reader2.close();
+			giveBooks2.close();
         }
         catch(IOException ex)
 		{
