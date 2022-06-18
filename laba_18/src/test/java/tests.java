@@ -88,5 +88,15 @@ public class tests {
         }
         Assert.assertNotEquals(true,f);
     }
-
+    @Test
+    public void TestMaxInArrayOnDiagonal()
+    {
+        int[][] arr = {
+                {0,0,0,0},
+                {0,0,0,0},
+                {0,0,9,0},
+                {0,0,0,0}};
+        var x = laba_18.maxArr(arr);
+        Assert.assertEquals(9, x);
+    }
 }

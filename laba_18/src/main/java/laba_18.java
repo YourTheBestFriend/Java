@@ -3,6 +3,14 @@ import org.junit.Test;
 import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.OptionalInt;
+/*
+Дана квадратная матрица. Найти сумму элементов, которые больше,
+чем максимум главной диагонали. Поменять местами элементы
+главной и побочной диагоналей.
+! Решил сделать тест чисто по поиску max т.к сумму каких элементов?
+* */
+
+
     /**
      * @author Goncharov Matthew
      * @version 0.1
@@ -49,7 +57,7 @@ import java.util.OptionalInt;
         }
      /**
       * Функция для смены элементов на главной и побочной диагонали
-      *
+      * @param arr
       * @return возвращает среднее арифмитическое
       */
      public static int[][] replaceDiag(int[][] arr)
@@ -93,4 +101,27 @@ import java.util.OptionalInt;
          }
          return arr;
      }
+        /**
+         * Функция по поиску max на диагонали
+         * @param arr
+         * @return max
+         */
+        public static int maxArr(int[][] arr)
+        {
+            int max = arr[0][0];
+            for (int i = 0; i < arr.length; i++)
+            {
+                for (int j = 0 ; j < arr.length; j++)
+                {
+                    if (i == j)
+                    {
+                        if (max < arr[i][j])
+                        {
+                            max = arr[i][j];
+                        }
+                    }
+                }
+            }
+            return max;
+        }
  }
