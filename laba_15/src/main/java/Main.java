@@ -16,14 +16,9 @@ class ListWork extends JFrame{
         window.setVisible(true);
         window.pack();
         window.setMinimumSize(window.getSize());
-
-
     }
     public ListWork(String s){
         super(s); //задаем название окна
-        myHash.put("Goncharov Matthew","Prititskogo, +375297524678");
-        myHash.put("Artem Zelenok","Derzhinskogo, +3752923878998");
-        myHash.put("Orlis David","Prititskogo, +375292345626");
         DefaultListModel myListModel = new DefaultListModel(); //создаем модель для
 
         for (String key: myHash.keySet()) {
@@ -54,15 +49,6 @@ class ListWork extends JFrame{
                 while (myListModel.contains(myText.getText())){ //равных значению
                     myListModel.removeElement(myText.getText()); //в текстовой строке
                 }
-//                String person = myList.getSelectedValue().toString();  /////////////////////////////////////////////////////////////////////// myList.getSelectedValue()
-//                int num_person
-//                System.out.println(person);
-//                if (myListModel.contains(person) == true) {
-//                    // аmyListModel.
-//                    // myListModel.removeElement(person);
-//                    System.out.println(myListModel);
-//                    System.out.println("delete complete");
-//                }
                 }
             });
         box1.add(button2); //добавляем кнопку на компоновку
@@ -100,16 +86,6 @@ class ListWork extends JFrame{
                 } catch (IOException e1) {
                     e1.printStackTrace(); //если произойдет ошибка, будет выведено сообщение }
                 }
-//                try { //секция, в которой можно выполнять небезопасные действия созданному
-//                    myWriter=new FileWriter(fdlg.getDirectory()+fdlg.getFile());
-//                    BufferedWriter myBWriter=new BufferedWriter(myWriter);
-//                    myBWriter.write(""+myHash);//используя
-//                    myBWriter.newLine(); //и вставляем символ перехода на новую
-//
-//                    myBWriter.close();//закрываем все соединения myWriter.close();
-//                } catch (IOException e1) {
-//                    e1.printStackTrace(); //если произойдет ошибка, будет выведено сообщение }
-//                }
             }});
 
         myBox2.add(Box.createHorizontalGlue()); //вставляем «пружину», чтобы кнопки
@@ -141,16 +117,6 @@ class ListWork extends JFrame{
                     for (String key: myHash.keySet()) {
                         myListModel.addElement(key);
                     }
-//                    try {
-//                        myReader=new FileReader(fdlg.getDirectory()+fdlg.getFile());
-//                        myListModel.clear(); //очищаем список, т.к. в него будут помещены новые данные
-//                        BufferedReader myBReader=new BufferedReader(myReader);
-//                        String s;
-////                        while ((s=myBReader.readLine())!=null){ myHash= s;
-////                        }
-//                        myBReader.close();//закрываем все соединения myReader.close();
-//                    } catch (IOException e1) { e1.printStackTrace();
-//                    }
                 }
             });
             myBox2.add(button4);//добавляем кнопку на компоновку

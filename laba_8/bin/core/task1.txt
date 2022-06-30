@@ -1,3 +1,0 @@
-name: Goncharov Matvey Nickolaevich
-yearsOld: 17
-sex: M

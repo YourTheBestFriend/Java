@@ -1,16 +1,11 @@
-import org.junit.Assert;
-import org.junit.Test;
-import java.lang.reflect.Array;
 import java.util.Arrays;
-import java.util.OptionalInt;
+
 /*
 Дана квадратная матрица. Найти сумму элементов, которые больше,
 чем максимум главной диагонали. Поменять местами элементы
 главной и побочной диагоналей.
 ! Решил сделать тест чисто по поиску max т.к сумму каких элементов?
 * */
-
-
     /**
      * @author Goncharov Matthew
      * @version 0.1
